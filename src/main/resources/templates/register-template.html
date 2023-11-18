@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="tr">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Kayıt Onayı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: #5cb85c;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        a:hover {
+            background-color: #4cae4c;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        a:hover {
+            cursor: hand;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img th:src="'data:image/png;base64,' + ${image}" alt="logo" class="logo">
+        <h1>Kayıt İsteğiniz Alındı!</h1>
+        <p>
+            Merhaba <span th:text="${username}">Kullanıcı</span>, kayıt
+            işleminizi tamamlamak için aşağıdaki linke tıklayın:
+        </p>
+        <a th:href="${activationLink}" th:text="${activationLink}">Aktivasyonu Tamamla</a>
+        <p class="footer">© 2023 MicroDevs. Tüm hakları saklıdır.</p>
+    </div>
+</body>
+</html>
